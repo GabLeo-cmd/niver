@@ -108,44 +108,29 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   position: relative;
-  background: var(--bg-pink); /* fundo suave para bordas */
+  background: var(--bg-pink); /* fundo atrás da imagem */
 }
 
 .carousel-track {
   display: flex;
   width: calc(100% * 6); /* 6 imagens */
-  animation: slide 48s infinite; /* 6 fotos × 8s cada = 48s */
+  animation: slide 60s linear infinite; /* 6 fotos × 10s cada */
 }
 
 .carousel img {
   width: 100%;
   height: 100%;
   object-fit: contain; /* mostra a imagem inteira */
-  flex-shrink: 0; 
-  background: var(--bg-pink); /* cor atrás da imagem */
+  flex-shrink: 0;
+  background: var(--bg-pink); /* cor atrás das imagens */
 }
 
+/* deslizando suave da 1ª até a última */
 @keyframes slide {
-  0% { transform: translateX(0); }
-  16.66% { transform: translateX(0); }
-
-  16.67% { transform: translateX(-100%); }
-  33.33% { transform: translateX(-100%); }
-
-  33.34% { transform: translateX(-200%); }
-  50% { transform: translateX(-200%); }
-
-  50.01% { transform: translateX(-300%); }
-  66.66% { transform: translateX(-300%); }
-
-  66.67% { transform: translateX(-400%); }
-  83.33% { transform: translateX(-400%); }
-
-  83.34% { transform: translateX(-500%); }
-  99.99% { transform: translateX(-500%); }
-
-  100% { transform: translateX(0); } /* volta para a primeira */
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-500%); } /* 6 imagens → vai até a última */
 }
+
 
 /* Texto final */
 .final-text {
