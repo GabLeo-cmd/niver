@@ -8,25 +8,27 @@
 </head>
 <body>
   <div class="stage">
+    <!-- Botão inicial -->
     <button id="gift-btn"><span>🎁</span></button>
 
+    <!-- Primeira mensagem -->
     <div class="center-message" id="message1">
       <h1>Feliz Aniversário Mainha! 🎉</h1>
       <p>Que seu dia seja cheio de alegria, amor e bênçãos! ❤️</p>
       <button id="next-btn">💖 Abrir Mensagem</button>
     </div>
 
+    <!-- Segunda mensagem com carrossel -->
     <div class="center-message" id="message2">
       <div class="carousel">
-  <div class="carousel-track">
-    <img src="assets/WhatsApp Image 2025-09-08 at 19.52.06.jpeg" alt="Foto 1">
-    <img src="assets/WhatsApp Image 2025-09-08 at 19.52.38.jpeg" alt="Foto 2">
-    <img src="assets/WhatsApp Image 2025-09-08 at 19.52.52.jpeg" alt="Foto 3">
-    <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (1).jpeg" alt="Foto 4">
-    <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (2).jpeg" alt="Foto 5">
-    <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13.jpeg" alt="Foto 6">
-  </div>
-</div>
+        <div class="carousel-track">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.06.jpeg" alt="Foto 1">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.38.jpeg" alt="Foto 2">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.52.jpeg" alt="Foto 3">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (1).jpeg" alt="Foto 4">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (2).jpeg" alt="Foto 5">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13.jpeg" alt="Foto 6">
+        </div>
       </div>
       <p class="final-text">
         Hoje é o dia de Mainha, e eu só tenho a agradecer por tudo que você é e faz. 
@@ -37,8 +39,10 @@
       </p>
     </div>
 
+    <!-- Bolhas decorativas -->
     <div class="bubbles"></div>
 
+    <!-- Música -->
     <audio id="music" autoplay loop>
       <source src="assets/falamansa-xote.mp3" type="audio/mpeg">
       Seu navegador não suporta áudio.
@@ -63,6 +67,7 @@
       message2.style.display = "flex";
     });
 
+    // Criar bolhas decorativas
     const bubbles = document.querySelector(".bubbles");
     const colors = ["var(--bubble-yellow)", "var(--bubble-lightpink)", "var(--bubble-orange)"];
     for (let i = 0; i < 20; i++) {

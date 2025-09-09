@@ -71,6 +71,7 @@ body {
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* Botões */
 #gift-btn, #next-btn {
   width: clamp(140px, 40vw, 180px);
   height: clamp(50px, 12dvh, 65px);
@@ -78,7 +79,7 @@ body {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,6 +88,8 @@ body {
   font-weight: bold;
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
   transition: transform 0.2s;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #gift-btn:hover, #next-btn:hover {
@@ -97,6 +100,7 @@ body {
   font-size: 1.6rem;
 }
 
+/* Carrossel */
 .carousel {
   width: min(90vw, 600px);
   height: min(60dvh, 400px);
@@ -142,11 +146,7 @@ body {
   100% { transform: translateX(0); } /* volta para a primeira */
 }
 
-
-.marquee {
-  animation: slide 10s linear infinite;
-}
-
+/* Texto final */
 .final-text {
   font-size: clamp(1rem, 2.8vw, 1.2rem);
   margin-top: 1rem;
@@ -155,6 +155,7 @@ body {
   max-width: 90%;
 }
 
+/* Bolhas */
 .bubbles {
   position: absolute;
   inset: 0;
