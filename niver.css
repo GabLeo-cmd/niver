@@ -101,34 +101,37 @@ body {
 }
 
 .carousel {
-  width: min(90vw, 600px);
+  width: 100%;
+  max-width: 600px;
   height: min(60dvh, 400px);
   margin: 0 auto 1rem;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   position: relative;
-  background: var(--bg-pink); /* fundo atrás da imagem */
+  background: var(--bg-pink);
 }
 
 .carousel-track {
-  display: flex;
-  width: calc(100% * 6); /* 6 imagens */
-  animation: slide 60s linear infinite; /* 6 fotos × 10s cada */
+  display: inline-block;
+  white-space: nowrap;
+  animation: slide 60s linear infinite;
 }
 
 .carousel img {
+  display: inline-block;
   width: 100%;
+  max-width: 600px;
   height: 100%;
   object-fit: contain; /* mostra a imagem inteira */
-  flex-shrink: 0;
-  background: var(--bg-pink); /* cor atrás das imagens */
+  background: var(--bg-pink);
+  vertical-align: middle;
 }
 
-/* deslizando suave da 1ª até a última */
+/* Animação suave, loop infinito */
 @keyframes slide {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-500%); } /* 6 imagens → vai até a última */
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
 }
 
 
