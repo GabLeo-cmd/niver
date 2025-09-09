@@ -1,0 +1,156 @@
+:root {
+  --bg-pink: #ffdfe6; 
+  --bubble-yellow: #fff3b0;
+  --bubble-lightpink: #ffd1e6;
+  --bubble-orange: #ffb07a;
+  --accent: #ff7a59;
+  --text: #3a2b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100dvh; 
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg-pink);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text);
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-message {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  max-width: 90%;
+}
+
+.center-message h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--accent);
+  animation: popIn 1s ease forwards;
+}
+
+.center-message p {
+  margin-top: 0.8rem;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: #6b4f4f;
+  animation: fadeUp 1s 0.3s ease forwards;
+  opacity: 0;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#gift-btn, #next-btn {
+  width: clamp(140px, 40vw, 180px);
+  height: clamp(50px, 12dvh, 65px);
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+}
+
+#gift-btn:hover, #next-btn:hover {
+  transform: scale(1.05);
+}
+
+#gift-btn span {
+  font-size: 1.6rem;
+}
+
+.carousel {
+  width: min(90vw, 600px);
+  height: min(60dvh, 400px);
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.carousel-track {
+  display: flex;
+  animation: slide 25s linear infinite;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.final-text {
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  margin-top: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.bubbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(15px);
+  animation: glow 3s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.bubble.small { width: 30px; height: 30px; }
+.bubble.med { width: 60px; height: 60px; }
+.bubble.large { width: 100px; height: 100px; }

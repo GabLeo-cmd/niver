@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversário</title>
+  <link rel="stylesheet" href="niver.css">
+</head>
+<body>
+  <div class="stage">
+    <button id="gift-btn"><span>🎁</span></button>
+
+    <div class="center-message" id="message1">
+      <h1>Feliz Aniversário Mainha! 🎉</h1>
+      <p>Que seu dia seja cheio de alegria, amor e bênçãos! ❤️</p>
+      <button id="next-btn">💖 Abrir Mensagem</button>
+    </div>
+
+    <div class="center-message" id="message2">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.06.jpeg" alt="Foto 1">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.38.jpeg" alt="Foto 2">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.52.jpeg" alt="Foto 3">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (1).jpeg" alt="Foto 4">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (2).jpeg" alt="Foto 5">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13.jpeg" alt="Foto 6">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.06.jpeg" alt="Foto 1 repetida">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.38.jpeg" alt="Foto 2 repetida">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.52.52.jpeg" alt="Foto 3 repetida">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (1).jpeg" alt="Foto 4 repetida">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13 (2).jpeg" alt="Foto 5 repetida">
+          <img src="assets/WhatsApp Image 2025-09-08 at 19.53.13.jpeg" alt="Foto 6 repetida">
+        </div>
+      </div>
+      <p class="final-text">
+        Hoje é o dia de Mainha, e eu só tenho a agradecer por tudo que você é e faz. 
+        Que Deus continue abençoando a sua vida com muita saúde, paz, alegria e amor. 
+        Que esse novo ciclo seja cheio de coisas boas, sorrisos e realizações.
+
+        Parabéns, mainha, você merece o mundo! 🎉🌹✨
+      </p>
+    </div>
+
+    <div class="bubbles"></div>
+
+    <audio id="music" autoplay loop>
+      <source src="assets/falamansa-xote.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </div>
+
+  <script>
+    const giftBtn = document.getElementById("gift-btn");
+    const message1 = document.getElementById("message1");
+    const message2 = document.getElementById("message2");
+    const nextBtn = document.getElementById("next-btn");
+    const music = document.getElementById("music");
+
+    music.addEventListener("ended", () => {
+      music.currentTime = 0;
+      music.play();
+    });
+
+    giftBtn.addEventListener("click", () => {
+      giftBtn.style.display = "none";
+      message1.style.display = "flex";
+      music.play();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      message1.style.display = "none";
+      message2.style.display = "flex";
+    });
+
+    const bubbles = document.querySelector(".bubbles");
+    const colors = ["var(--bubble-yellow)", "var(--bubble-lightpink)", "var(--bubble-orange)"];
+    for (let i = 0; i < 20; i++) {
+      const b = document.createElement("div");
+      b.className = "bubble " + ["small","med","large"][Math.floor(Math.random()*3)];
+      b.style.background = colors[Math.floor(Math.random()*colors.length)];
+      b.style.left = Math.random() * 100 + "%";
+      b.style.top = Math.random() * 100 + "%";
+      b.style.animationDelay = (Math.random() * 5) + "s";
+      bubbles.appendChild(b);
+    }
+  </script>
+</body>
+</html>
